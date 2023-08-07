@@ -15,7 +15,7 @@ export const Footer = () => {
           <div className="flex justify-center items-center gap-2 text-sm w-full">
             📝{" "}
             <a
-              href="https://github.com/BuidlGuidl/streams-to-autoworld"
+              href="https://github.com/BuidlGuidl/streams-to-optimizooors"
               target="_blank"
               rel="noreferrer"
               className="underline underline-offset-2"

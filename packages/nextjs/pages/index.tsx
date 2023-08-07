@@ -51,7 +51,7 @@ const Home: NextPage = () => {
     (builderData: BuilderData) => builderData.builderAddress === address,
   );
 
-  const title = "🌐 Autonomous Worlds";
+  const title = "🔐 Security && ⛽️ Optimizooors";
 
   return (
     <>
