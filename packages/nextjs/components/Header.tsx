@@ -15,18 +15,10 @@ export const Header = () => {
             <span className="pr-2">selection committee:</span>
             <a href="https://twitter.com/13yearoldvc" target="_blank" rel="noreferrer">
               Jessy
-            </a>
-            ,{" "}
-            <a href="https://twitter.com/0xjepsen" target="_blank" rel="noreferrer">
-              Waylon
-            </a>
-            ,{" "}
-            <a href="https://twitter.com/Autoparallel" target="_blank" rel="noreferrer">
-              Colin
-            </a>
-            , and{" "}
-            <a href="https://twitter.com/solidityslayer" target="_blank" rel="noreferrer">
-              Alexis
+            </a>{" "}
+            and{" "}
+            <a href="https://github.com/Divide-By-0" target="_blank" rel="noreferrer">
+              Aayush
             </a>
           </div>
         </div>
