@@ -13,8 +13,8 @@ export const Header = () => {
           <Image src="/jessy.png" alt="Hacker House Logo" width={523} height={36} className="mx-4" />
           <div className="m-0 mt-1 pl-4 text-sm md:text-base">
             <span className="pr-2">selection committee:</span>
-            <a href="https://github.com/Divide-By-0" target="_blank" rel="noreferrer">
-              Aayush
+            <a href="https://twitter.com/Komorebi8888" target="_blank" rel="noreferrer">
+              Komerabi
             </a>{" "}
             and{" "}
             <a href="https://twitter.com/13yearoldvc" target="_blank" rel="noreferrer">

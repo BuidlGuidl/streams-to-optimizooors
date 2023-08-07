@@ -51,7 +51,7 @@ const Home: NextPage = () => {
     (builderData: BuilderData) => builderData.builderAddress === address,
   );
 
-  const title = "😎 ZK && 🔏 Cryptography";
+  const title = "🌐 Autonomous Worlds";
 
   return (
     <>
