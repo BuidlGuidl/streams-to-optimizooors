@@ -11,12 +11,10 @@ export const Header = () => {
       <div className="flex items-center justify-center mb-4 sm:mb-0 invisible md:visible">
         <div className="flex-col items-start">
           <Image src="/jessy.png" alt="Hacker House Logo" width={523} height={36} className="mx-4" />
+          <div className="w-100 text-center opacity-50">and</div>
+          <Image src="/curta.png" alt="Hacker House Logo" width={523} height={49} className="mx-4 pt-1 pb-1" />
           <div className="m-0 mt-1 pl-4 text-sm md:text-base">
             <span className="pr-2">selection committee:</span>
-            <a href="https://twitter.com/curta_ctf" target="_blank" rel="noreferrer">
-              Curta
-            </a>
-            ,{" "}
             <a href="https://twitter.com/shanefanx" target="_blank" rel="noreferrer">
               Shane
             </a>
