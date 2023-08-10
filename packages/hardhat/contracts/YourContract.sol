@@ -13,7 +13,7 @@ contract YourContract is Ownable {
     }
     mapping(address => BuilderStreamInfo) public streamedBuilders;
     // ToDo. Change to 30 days
-    uint256 public frequency = 2592000; // 30 days
+    uint256 public constant FREQUENCY = 2592000; // 30 days
 
     event Withdraw(address indexed to, uint256 amount, string reason);
     event AddBuilder(address indexed to, uint256 amount);
@@ -41,22 +41,25 @@ contract YourContract is Ownable {
         BuilderStreamInfo memory builderStream = streamedBuilders[_builder];
         require(builderStream.cap > 0, "No active stream for builder");
 
-        if (block.timestamp - builderStream.last > frequency) {
+        if (block.timestamp - builderStream.last > FREQUENCY) {
             return builderStream.cap;
         }
 
-        return (builderStream.cap * (block.timestamp - builderStream.last)) / frequency;
+        return (builderStream.cap * (block.timestamp - builderStream.last)) / FREQUENCY;
     }
 
     function addBuilderStream(address payable _builder, uint256 _cap) public onlyOwner {
-        streamedBuilders[_builder] = BuilderStreamInfo(_cap, block.timestamp - frequency);
+        streamedBuilders[_builder] = BuilderStreamInfo(_cap, block.timestamp - FREQUENCY);
         emit AddBuilder(_builder, _cap);
     }
 
     function addBatch(address[] memory _builders, uint256[] memory _caps) public onlyOwner {
         require(_builders.length == _caps.length, "Lengths are not equal");
-        for (uint256 i = 0; i < _builders.length; i++) {
+        for (uint256 i = 0; i < _builders.length;) {
             addBuilderStream(payable(_builders[i]), _caps[i]);
+            unchecked{
+                ++i;
+            }
         }
     }
 
@@ -75,7 +78,7 @@ contract YourContract is Ownable {
         uint256 totalAmountCanWithdraw = unlockedBuilderAmount(msg.sender);
         require(totalAmountCanWithdraw >= _amount,"Not enough in the stream");
 
-        uint256 cappedLast = block.timestamp - frequency;
+        uint256 cappedLast = block.timestamp - FREQUENCY;
         if (builderStream.last < cappedLast){
             builderStream.last = cappedLast;
         }
